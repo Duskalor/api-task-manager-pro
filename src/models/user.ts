@@ -85,7 +85,6 @@ export const revokeUserToken = async (email: string): Promise<boolean> => {
     where: { email },
     data: {
       ...user,
-      token: undefined,
       refreshToken: undefined,
     },
   });

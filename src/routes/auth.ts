@@ -1,8 +1,8 @@
-import { userController } from 'controller/user-controller';
+import { addUser, login, logout } from 'controller/user-controller';
 import { Router } from 'express';
 
 export const router = Router();
 
-router.post('/login', userController.addUser);
-router.post('/register', userController.addUser);
-router.post('/logout', userController.addUser);
+router.post('/register', addUser);
+router.post('/login', login);
+router.post('/logout', logout);

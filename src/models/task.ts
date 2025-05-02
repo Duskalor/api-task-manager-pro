@@ -5,8 +5,8 @@ import { prisma } from 'db';
  * Retrieves all tasks from the database.
  * @returns {Promise<Task[]>} A promise that resolves to an array of tasks.
  */
-export const getTasks = async (): Promise<Task[]> => {
-  const tasks = await prisma.task.findMany();
+export const getTasks = async ({ id }: { id: string }): Promise<Task[]> => {
+  const tasks = await prisma.task.findMany({ where: { userId: id } });
   return tasks;
 };
 
